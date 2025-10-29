@@ -1,8 +1,6 @@
 # COURS DE SCIENCE DES DONNÉES
 ## École Nationale de Commerce et de Gestion (ENCG) - 4ème Année
 
-<img width="1389" height="989" alt="image" src="https://github.com/user-attachments/assets/6640d030-c417-40e6-b6ab-2f3d81eb60d9" />
-
 # AIT BAHA Saad
 
 <img width="413" height="531" alt="image" src="https://github.com/user-attachments/assets/7907a86e-d165-435e-9a17-e978aea52172" />
