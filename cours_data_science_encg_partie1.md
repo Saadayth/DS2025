@@ -289,6 +289,7 @@ plt.tight_layout()
 plt.show()
 ```
 
+<img width="1389" height="989" alt="image" src="https://github.com/user-attachments/assets/66bd7873-12b9-4a55-86ab-ef48a3ac2106" />
 
 
 ### 2.3 Statistiques Inférentielles
