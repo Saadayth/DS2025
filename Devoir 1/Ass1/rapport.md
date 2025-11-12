@@ -4,6 +4,10 @@
 
 # **Prédiction du décrochage et de la réussite académique des étudiants**
 
-Ce jeu de données vise à analyser et prédire le risque d’abandon scolaire ainsi que le niveau de réussite académique des étudiants.  
-Il regroupe diverses informations démographiques, socio-économiques et académiques, permettant d’identifier les principaux facteurs qui influencent la performance et la persévérance des apprenants.  
-Ce type d’analyse aide les établissements à mieux comprendre les causes du décrochage et à mettre en place des stratégies de soutien adaptées.
+Ce jeu de données a été créé dans le cadre d’un projet visant à réduire le taux d’abandon et d’échec scolaire dans l’enseignement supérieur.  
+L’objectif principal est d’utiliser des techniques d’apprentissage automatique pour identifier, dès les premières étapes de leur parcours académique, les étudiants présentant un risque de décrochage, afin de mettre en place des stratégies de soutien adaptées.  
+
+Le jeu de données contient des informations disponibles au moment de l’inscription de l’étudiant, telles que son parcours académique, ses caractéristiques démographiques et socio-économiques.  
+Le problème est formulé comme une tâche de classification à trois catégories : **abandon**, **inscrit**, et **diplômé**, évaluées à la fin de la durée normale du cursus.  
+
+Ce projet est soutenu par le programme **SATDAP - Capacitação da Administração Pública**, sous la subvention **POCI-05-5762-FSE-000191**, au Portugal.
