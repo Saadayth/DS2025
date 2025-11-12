@@ -11,3 +11,8 @@ Le jeu de données comprend **4 424 étudiants** décrits par **36 variables** s
 L’objectif est de formuler une **tâche de classification à trois catégories** : *dropout* (décrochage), *enrolled* (inscrit) et *graduate* (diplômé), afin d’identifier précocement les étudiants à risque et de permettre la mise en place de stratégies de soutien personnalisées.  
 
 Créé dans le cadre d’un projet soutenu par le programme **SATDAP – Capacitação da Administração Pública** (subvention **POCI-05-5762-FSE-000191**), ce jeu de données a été déposé au **UCI Machine Learning Repository** le **12 décembre 2021** et présenté dans l’article *“Trends and Applications in Information Systems and Technologies”* publié la même année.
+
+
+
+Matrice de corrélation
+<img width="1087" height="1016" alt="visual 2" src="https://github.com/user-attachments/assets/5e12ce5a-fad9-4ea8-a306-137c278253be" />
