@@ -1,6 +1,6 @@
 # AIT BAHA Saad - Etudiant Groupe 1 CAC
 
-<img src="https://github.com/user-attachments/assets/1fc30205-0df3-4b78-82c5-246950d26dd6" alt="347" width="400"/>
+<img src="https://github.com/user-attachments/assets/1fc30205-0df3-4b78-82c5-246950d26dd6" alt="173" width="200"/>
 
 # **Prédiction du décrochage et de la réussite académique des étudiants**
 
