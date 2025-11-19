@@ -37,7 +37,7 @@ Pour l’analyse, la qualité a été convertie en variable **binaire** :
 Ces boxplots montrent l’échelle, la dispersion et les valeurs extrêmes pour chaque variable.  
 Certaines variables présentent de nombreux outliers (ex : *total sulfur dioxide*, *free sulfur dioxide*, *residual sugar*).
 
-![Boxplots](sandbox:/mnt/data/19bacc2e-7514-4250-a873-aa39d16b1391.png)
+<img width="1189" height="590" alt="image" src="https://github.com/user-attachments/assets/a1c3ed9f-a768-4fbd-8b61-d7abed672a93" />
 
 ---
 
@@ -48,7 +48,7 @@ La matrice de corrélation révèle des relations notables :
 - Corrélation entre **density** et **residual sugar**.  
 - Corrélation négative entre **alcohol** et **density**.
 
-![Correlation Heatmap](sandbox:/mnt/data/af7bfb73-8e40-4866-b35c-853f99278a2e.png)
+<img width="939" height="790" alt="image" src="https://github.com/user-attachments/assets/c9814c87-7960-44ab-a15e-15945c163f59" />
 
 ---
 
@@ -61,7 +61,7 @@ Observations :
 - L’erreur de validation reste élevée (~0.32).  
 - Les deux courbes divergent fortement → mauvais généralisation.
 
-![kNN brut](sandbox:/mnt/data/204f1cc7-94c8-4640-8310-45502ad42005.png)
+<img width="700" height="470" alt="image" src="https://github.com/user-attachments/assets/90eb2e19-0e00-42b2-b226-c034bb9d10f8" />
 
 ---
 
@@ -73,7 +73,7 @@ Après normalisation (centrage-réduction), les performances s’améliorent :
 - Les courbes apprentissage/validation sont plus proches.  
 - Le modèle généralise mieux.
 
-![kNN normalisé](sandbox:/mnt/data/f97bd4bf-ab24-4946-9c5e-5d0d41722c8f.png)
+<img width="700" height="470" alt="image" src="https://github.com/user-attachments/assets/8eed20a1-c38f-4a6d-8d23-4ca07163e375" />
 
 ---
 
