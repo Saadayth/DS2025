@@ -219,13 +219,3 @@ Un **schéma de pré-traitement différencié** a été mis en place pour les va
 
 3. **ColumnTransformer global**  
    - Combine les deux pipelines dans un objet unique `preprocessor` appliqué automatiquement sur les colonnes adéquates.
-
-### 5.3 Intégration dans des Pipelines complets
-
-Pour chaque modèle de classification, un **pipeline scikit-learn** est construit :
-
-```text
-X (données brutes) 
-    → preprocessor (imputation + encodage + scaling)
-    → classifier (modèle de ML)
-    → prédictions
