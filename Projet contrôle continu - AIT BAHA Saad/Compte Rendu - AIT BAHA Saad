@@ -1,0 +1,231 @@
+# École Nationale de Commerce et de Gestion – Settat  
+## Année universitaire 2024–2025  
+### Rapport académique – Implémentation technique (Python)  
+### Dataset UCI : *Estimation of Obesity Levels Based on Eating Habits and Physical Condition*
+
+---
+
+## 1. Introduction
+
+L’obésité constitue aujourd’hui un enjeu majeur de santé publique, associée à une augmentation significative des risques de maladies cardiovasculaires, de diabète de type 2 et de certaines formes de cancer. La disponibilité de données détaillées sur les habitudes alimentaires, l’activité physique et le mode de vie permet d’utiliser les outils de la Data Science et du Machine Learning pour mieux comprendre les facteurs associés aux différents niveaux d’obésité et pour développer des modèles prédictifs.
+
+Dans le cadre du module d’Analyse de données et de Machine Learning à l’ENCG Settat, ce rapport présente une implémentation technique complète, en langage Python, autour du dataset UCI :
+
+> **“Estimation of Obesity Levels Based on Eating Habits and Physical Condition” (id=544)**
+
+L’objectif principal est double :
+
+1. **Analyser** de manière exhaustive la structure et le contenu du dataset, à travers un pré-traitement rigoureux et une analyse exploratoire détaillée (EDA).
+2. **Construire et évaluer** plusieurs modèles de classification supervisée visant à prédire le niveau d’obésité d’un individu à partir de ses caractéristiques socio-démographiques, de ses habitudes alimentaires et de son niveau d’activité physique.
+
+Le rapport suit strictement les étapes demandées :
+
+- Pré-traitement (nettoyage, imputation, encodage, normalisation, feature engineering)  
+- Analyse exploratoire (visualisation des distributions, corrélations, interprétations textuelles)  
+- Modélisation (test d’au moins trois algorithmes, validation rigoureuse, optimisation des hyperparamètres)
+
+---
+
+## 2. Présentation du dataset
+
+### 2.1 Source et contexte
+
+Le dataset provient du dépôt **UCI Machine Learning Repository** et est accessible via la librairie Python `ucimlrepo`. Il a été construit à partir de données collectées auprès de différents individus, avec pour objectif de **classifier le niveau d’obésité** en fonction de leurs habitudes de vie.
+
+Le problème posé est donc un **problème de classification supervisée multiclasse**, où la cible correspond à plusieurs catégories de poids allant de l’insuffisance pondérale à différents degrés d’obésité.
+
+### 2.2 Unités statistiques et taille de l’échantillon
+
+Chaque observation du dataset représente **un individu**, décrit par :
+
+- des informations socio-démographiques (âge, sexe, taille, etc.) ;
+- des habitudes alimentaires (fréquence de consommation d’aliments caloriques, de légumes, nombre de repas, grignotage, consommation d’alcool, etc.) ;
+- des indicateurs d’activité physique et de mode de vie (fréquence d’exercice, temps passé devant les écrans, moyen de transport, tabagisme, etc.) ;
+- un **niveau d’obésité**, calculé à partir de l’IMC et codé en plusieurs catégories ordinales.
+
+La taille exacte de l’échantillon est fournie dans le notebook (via `df.shape`). Le volume de données est suffisant pour conduire une analyse statistique robuste et entraîner des modèles de Machine Learning tout en limitant le surapprentissage.
+
+### 2.3 Variable cible
+
+La variable cible (notée ici `target_col` dans le code) correspond au **niveau d’obésité**. Elle regroupe généralement les classes suivantes (noms exacts à vérifier dans le notebook) :
+
+- `Insufficient_Weight`  
+- `Normal_Weight`  
+- `Overweight_Level_I`  
+- `Overweight_Level_II`  
+- `Obesity_Type_I`  
+- `Obesity_Type_II`  
+- `Obesity_Type_III`
+
+On se trouve donc dans un cadre **multiclasse**, avec 7 catégories ordonnées, ce qui complique légèrement la tâche de classification par rapport à un simple problème binaire.
+
+### 2.4 Types et familles de variables explicatives
+
+Les variables explicatives peuvent être organisées en grandes familles :
+
+1. **Variables socio-démographiques**
+   - *Age* : âge de l’individu (numérique)  
+   - *Height, Weight* : taille et poids, souvent utilisées pour calculer l’IMC (numériques)  
+   - *Gender* : homme/femme (catégorielle)
+
+2. **Variables liées aux antécédents et à la perception du poids**
+   - *family_history_with_overweight* : existence d’un historique familial de surpoids  
+   - *SCC* : contrôle ou suivi des calories consommées  
+   - Éventuelles variables associées aux régimes précédents ou au suivi médical.
+
+3. **Variables sur les habitudes alimentaires**
+   - *FAVC* : consommation fréquente d’aliments très caloriques  
+   - *FCVC* : fréquence de consommation de légumes  
+   - *NCP* : nombre de repas principaux par jour  
+   - *CAEC* : consommation entre les repas (snacking)  
+   - *CALC* : consommation d’alcool  
+   - *CH2O* : quantité d’eau bue par jour
+
+4. **Variables sur l’activité physique et le mode de vie**
+   - *FAF* : fréquence d’activité physique  
+   - *TUE* : temps d’utilisation de dispositifs technologiques (écrans)  
+   - *MTRANS* : moyen de transport principal (marche, voiture, transports publics, etc.)  
+   - *SMOKE* : statut tabagique
+
+La plupart de ces variables sont **catégorielles**, souvent ordinales (faible/moyen/élevé), mais traitées dans le code comme des catégories et encodées via One-Hot Encoding.
+
+---
+
+## 3. Méthodologie générale
+
+### 3.1 Environnement technique
+
+L’implémentation a été réalisée sous **Google Colab** en Python, avec les librairies suivantes :
+
+- `pandas`, `numpy` pour la manipulation des données  
+- `matplotlib`, `seaborn` pour la visualisation  
+- `scikit-learn` pour le pré-traitement, la modélisation et l’évaluation :
+  - `train_test_split`, `StratifiedKFold`, `cross_val_score`, `RandomizedSearchCV`  
+  - `OneHotEncoder`, `StandardScaler`, `ColumnTransformer`, `Pipeline`, `SimpleImputer`  
+  - `LogisticRegression`, `RandomForestClassifier`, `GradientBoostingClassifier`  
+  - `classification_report`, `confusion_matrix`, `ConfusionMatrixDisplay`, `roc_auc_score`
+
+Le dataset est récupéré directement depuis UCI grâce à la fonction `fetch_ucirepo(id=544)` de la librairie `ucimlrepo`, ce qui garantit une reproductibilité complète de l’analyse.
+
+### 3.2 Pré-traitement des données
+
+Les principales étapes de pré-traitement sont les suivantes :
+
+1. **Chargement et fusion des données**  
+   - Les features (`X`) et la cible (`y`) sont importées puis fusionnées dans un DataFrame unique `df` pour faciliter l’EDA.  
+   - Les métadonnées (`metadata`, `variables`) sont inspectées afin de comprendre le rôle de chaque attribut.
+
+2. **Gestion des doublons**  
+   - Le nombre de lignes dupliquées est calculé via `data.duplicated().sum()`.  
+   - Le cas échéant, les doublons sont supprimés, permettant d’éviter un biais dans l’estimation des modèles.
+
+3. **Analyse des valeurs manquantes**  
+   - Les valeurs manquantes sont comptées pour chaque variable (`data.isna().sum()`).  
+   - Le dataset présente en général peu de valeurs manquantes, mais un mécanisme d’imputation est mis en place dans les pipelines (voir section 3.4).
+
+4. **Typage des variables**  
+   - Distinction entre **variables numériques** (int/float) et **variables catégorielles** (object/category/bool).  
+   - Cette séparation conditionne le choix des transformateurs dans le `ColumnTransformer`.
+
+### 3.3 Feature Engineering
+
+Une variable synthétique a été introduite afin d’exploiter l’information dispersée dans les variables numériques :
+
+- **`numeric_risk_score`** : pour chaque individu, on calcule le nombre de variables numériques dont la valeur est **supérieure à la médiane** de la variable considérée sur l’échantillon.  
+  - Chaque variable numérique donne un indicateur binaire (0 ou 1) selon qu’elle est au-dessus de la médiane.  
+  - Le score final est la somme de ces indicateurs.  
+  - Cette variable peut être interprétée comme un **score global de risque** agrégé, combinant plusieurs dimensions quantifiables (par exemple, poids, âge, etc.).
+
+Ce type de feature engineering simple permet d’augmenter la capacité explicative des modèles tout en restant interprétable.
+
+### 3.4 Partitionnement des données
+
+Pour évaluer correctement la performance des modèles, le dataset est divisé en deux sous-ensembles :
+
+- **Train set** : 80 % des données  
+- **Test set** : 20 % des données
+
+Le partitionnement repose sur `train_test_split` avec :
+
+- un `random_state=42` pour la reproductibilité ;
+- l’option `stratify=y` afin de préserver la proportion des classes de la cible dans les deux sous-ensembles (important en cas de déséquilibre des classes).
+
+---
+
+## 4. Analyse exploratoire des données (EDA)
+
+### 4.1 Distributions univariées
+
+Des histogrammes (et densités) ont été tracés pour les principales variables numériques (par exemple âge, poids, taille, certaines dérivées numériques du dataset).
+
+Les tendances générales observées sont :
+
+- **Âge** : distribution généralement concentrée sur les jeunes adultes et les adultes d’âge moyen.  
+- **Poids / IMC** : distribution étalée, avec une proportion importante d’individus en surpoids ou obèses, ce qui reflète la problématique étudiée.  
+- D’autres variables numériques montrent une dispersion modérée, sans valeurs extrêmes très nombreuses.
+
+Ces graphiques permettent de détecter d’éventuelles valeurs atypiques, des asymétries (skewness) ou des distributions multimodales.
+
+### 4.2 Répartition de la variable cible
+
+Un diagramme en barres a été réalisé sur la variable cible (niveaux d’obésité).
+
+- On observe un **déséquilibre des classes** : certaines catégories (par exemple `Normal_Weight` ou certains niveaux de surpoids) sont plus représentées que d’autres (par exemple `Insufficient_Weight` ou `Obesity_Type_III`).  
+- Ce déséquilibre doit être pris en compte dans l’interprétation des résultats et, idéalement, dans le choix des métriques (accuracy seule peut être insuffisante).
+
+### 4.3 Relations bivariées (boxplots)
+
+Des **boxplots** ont été générés pour quelques variables numériques en fonction de la classe d’obésité :
+
+- **Poids / IMC vs classe d’obésité** : les médianes et les quantiles augmentent logiquement à mesure que l’on passe de `Insufficient_Weight` à `Obesity_Type_III`.  
+- **Âge vs classe d’obésité** : l’âge n’est pas parfaitement discriminant, mais certaines classes d’obésité semblent concentrées sur des tranches d’âge spécifiques.
+
+Ces graphiques permettent de **visualiser la séparation** entre classes et d’identifier les variables les plus informatives.
+
+### 4.4 Matrice de corrélation des variables numériques
+
+Une matrice de corrélation a été calculée et représentée sous forme de **heatmap** pour les variables numériques :
+
+- Les corrélations les plus fortes se retrouvent logiquement entre **poids, taille, IMC ou dérivés**.  
+- Certaines variables liées à l’activité physique ou à l’usage des technologies peuvent présenter une corrélation modérée avec les variables de corpulence.  
+- La plupart des autres variables numériques montrent des corrélations faibles, ce qui est plutôt favorable pour la stabilité numérique des modèles linéaires.
+
+L’analyse de corrélation permet également de détecter d’éventuels problèmes de **multicolinéarité** susceptibles d’affecter certains algorithmes.
+
+---
+
+## 5. Pré-traitement technique pour le Machine Learning
+
+### 5.1 Séparation des features et de la cible
+
+À partir du DataFrame `data_fe` :
+
+- `X_all` contient l’ensemble des variables explicatives (y compris `numeric_risk_score`).  
+- `y_all` contient la variable cible multiclasse.  
+
+La cible est typée en `category` pour refléter la nature qualitative de la variable.
+
+### 5.2 Pipelines de transformation
+
+Un **schéma de pré-traitement différencié** a été mis en place pour les variables numériques et catégorielles, conformément aux bonnes pratiques :
+
+1. **Pipeline numérique**  
+   - `SimpleImputer(strategy="median")` : imputation des valeurs manquantes par la médiane (robuste aux valeurs extrêmes).  
+   - `StandardScaler()` : standardisation (moyenne 0, écart-type 1) pour faciliter l’apprentissage des modèles sensibles à l’échelle (ex. régression logistique).
+
+2. **Pipeline catégoriel**  
+   - `SimpleImputer(strategy="most_frequent")` : remplacement des valeurs manquantes par la modalité la plus fréquente.  
+   - `OneHotEncoder(handle_unknown="ignore")` : encodage one-hot des variables qualitatives, en ignorant les modalités inconnues lors de la prédiction afin d’éviter les erreurs.
+
+3. **ColumnTransformer global**  
+   - Combine les deux pipelines dans un objet unique `preprocessor` appliqué automatiquement sur les colonnes adéquates.
+
+### 5.3 Intégration dans des Pipelines complets
+
+Pour chaque modèle de classification, un **pipeline scikit-learn** est construit :
+
+```text
+X (données brutes) 
+    → preprocessor (imputation + encodage + scaling)
+    → classifier (modèle de ML)
+    → prédictions
