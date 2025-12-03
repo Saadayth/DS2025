@@ -1,14 +1,57 @@
-**Projet Data Science & Machine Learning**
+# Rapport Descriptif  
+## Dataset : « Estimation of Obesity Levels Based on Eating Habits and Physical Condition »
 
-1.     **Introduction**
+---
 
-Le dataset *« Bank Marketing »* provient d’une institution bancaire portugaise ayant conduit, entre *2008* et *2013*, une série de campagnes de marketing direct visant à promouvoir un produit financier spécifique : le dépôt à terme. Ces campagnes reposaient principalement sur le contact téléphonique entre la banque et ses clients potentiels, afin d’évaluer leur intérêt pour cette offre d’épargne. Le jeu de données représente ainsi une source authentique et complète d’informations liées au comportement réel des clients face à des sollicitations commerciales dans le secteur bancaire.
+## 1. Présentation générale
 
-Ce dataset a été publié par le **UCI Machine Learning Repository**, une plateforme académique internationale de référence pour la recherche en intelligence artificielle et en science des données. Il est aujourd’hui utilisé dans le monde entier par des étudiants, des chercheurs et des professionnels pour étudier et modéliser la réponse des clients à des actions marketing. Son domaine d’application principal est le marketing bancaire, mais il s’inscrit plus largement dans les champs de l’analyse prédictive, de l’optimisation des campagnes commerciales et de la stratégie relationnelle client.
+Le dataset « Estimation of Obesity Levels Based on Eating Habits and Physical Condition » provient d’un ensemble d’études réalisées dans différents pays d’Amérique Latine, notamment au Mexique, au Pérou et en Colombie. L’objectif principal de ces travaux était d’observer les habitudes alimentaires, les niveaux d’activité physique et certains comportements de santé afin d’estimer le niveau d’obésité des individus interrogés.
 
-Les données ont été collectées au **Portugal**, dans un contexte économique particulier marqué par la crise financière européenne et par la nécessité, pour les institutions bancaires, d’améliorer l’efficacité de leurs actions de prospection. Les clients contactés appartiennent à divers segments : professions variées, situations personnelles et financières multiples, habitudes distinctes vis-à-vis des produits bancaires. Le dataset reflète donc un échantillon représentatif de la clientèle d’une banque européenne opérant dans un marché mature et compétitif.
+Ce jeu de données s’inscrit dans un contexte où l’obésité constitue un enjeu majeur de santé publique. Les transformations rapides des modes de vie, l’évolution des régimes alimentaires et la diminution de l’activité physique dans les environnements urbanisés ont contribué à une augmentation significative des risques liés au surpoids. Le dataset offre ainsi une base empirique permettant d’étudier de manière structurée les interactions entre comportements alimentaires et condition physique.
 
-L’intérêt de ce dataset réside dans sa capacité à illustrer les enjeux du marketing direct et des campagnes ciblées. Il permet d’analyser de manière fiable comment des facteurs liés au client, au timing des appels, au canal de communication ou encore au contexte économique influencent la probabilité de souscrire une offre bancaire. Il constitue un support largement privilégié pour tester des méthodes de classification, de segmentation et de scoring marketing dans des environnements académiques et professionnels.
+---
 
-Enfin, ce dataset occupe une place importante dans la communauté Data Science car il combine une problématique réelle, une structure propre et une pertinence directe pour les domaines du marketing analytique, de la prise de décision basée sur les données et de l’optimisation des interactions client-banque.
+## 2. Origine et publication
+
+Le dataset a été publié par le UCI Machine Learning Repository, plateforme de référence pour la diffusion de jeux de données utilisés dans la recherche en intelligence artificielle, en data science et dans les études quantitatives appliquées aux sciences sociales et médicales. Il est couramment employé dans des analyses académiques visant à comprendre les déterminants de l’obésité ou à construire des modèles prédictifs relatifs aux risques de santé.
+
+Son domaine d’application dépasse le cadre strict de la nutrition. Il est utilisé dans la modélisation statistique, dans la conception de systèmes de recommandation liés au bien-être, ainsi que dans l’élaboration de programmes de prévention destinés à mieux comprendre l’impact des comportements individuels sur la santé.
+
+---
+
+## 3. Contexte de collecte
+
+Les données ont été recueillies dans plusieurs pays d’Amérique Latine, où les problématiques liées à l’obésité ont pris une importance croissante au cours des dernières années. La collecte s’est effectuée auprès d’individus aux profils variés, présentant des différences en termes d’âge, de sexe, d’habitudes alimentaires, de fréquence d’activité physique, de comportements de consommation et de perception personnelle de la santé.
+
+Le contexte socio-économique de ces régions, marqué par l’urbanisation rapide et la modification des rythmes de vie, a favorisé l’émergence de comportements associés à un risque accru de surpoids. Ce dataset reflète ainsi un échantillon représentatif des tendances alimentaires et sanitaires observées dans ces sociétés.
+
+---
+
+## 4. Domaine d’application
+
+Bien que le dataset soit principalement utilisé dans les travaux liés à la santé publique, il présente également un intérêt pour d’autres domaines tels que :
+
+- l’analyse comportementale ;
+- la modélisation prédictive appliquée aux facteurs de santé ;
+- les études médicales et nutritionnelles ;
+- la data science orientée vers la prévention et l’évaluation du risque ;
+- la recherche universitaire en classification et en apprentissage automatique.
+
+Il constitue un support pertinent pour l’analyse des relations entre alimentation, activité physique et état de santé.
+
+---
+
+## 5. Intérêt scientifique et utilité du dataset
+
+Le dataset permet d’illustrer de manière rigoureuse les liens complexes entre habitudes de vie et niveaux d’obésité. Il facilite l’étude des facteurs influençant la condition physique, tels que la fréquence des repas, les habitudes alimentaires, la durée d’activité physique ou encore la consommation d’aliments à haute teneur calorique.
+
+Il offre également un cadre idéal pour expérimenter différentes méthodes de classification, élaborer des systèmes de scoring liés à la santé ou construire des modèles prédictifs destinés à identifier les individus à risque. À ce titre, il représente une ressource privilégiée dans les travaux combinant analyse statistique, modélisation et étude des comportements sanitaires.
+
+---
+
+## 6. Importance pour la communauté Data Science
+
+Le dataset occupe une place significative dans la communauté Data Science, en raison de sa pertinence pour l’étude des problématiques de santé publique et de sa structure adaptée aux approches d’apprentissage supervisé. Il constitue un support formateur pour les chercheurs et étudiants souhaitant étudier l’impact des comportements individuels sur la santé et explorer des techniques de classification dans un cadre réel et documenté.
+
+---
 
