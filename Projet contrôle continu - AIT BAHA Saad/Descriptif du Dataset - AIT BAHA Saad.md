@@ -1,4 +1,4 @@
-# Rapport Descriptif  
+# Rapport Descriptif - AIT BAHA Saad
 ## Dataset : « Estimation of Obesity Levels Based on Eating Habits and Physical Condition »
 
 ---
@@ -49,9 +49,4 @@ Il offre également un cadre idéal pour expérimenter différentes méthodes de
 
 ---
 
-## 6. Importance pour la communauté Data Science
-
-Le dataset occupe une place significative dans la communauté Data Science, en raison de sa pertinence pour l’étude des problématiques de santé publique et de sa structure adaptée aux approches d’apprentissage supervisé. Il constitue un support formateur pour les chercheurs et étudiants souhaitant étudier l’impact des comportements individuels sur la santé et explorer des techniques de classification dans un cadre réel et documenté.
-
----
 
