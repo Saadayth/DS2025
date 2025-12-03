@@ -1,0 +1,32 @@
+# Projet : Estimation des Niveaux d’Obésité – Pipeline Machine Learning Complet
+
+## 📝 Présentation du Projet  
+Ce projet propose un pipeline complet d’analyse et de modélisation Machine Learning appliqué au dataset **“Estimation of Obesity Levels Based on Eating Habits and Physical Condition”** (UCI, ID 544).  
+Le notebook fournit une implémentation professionnelle incluant :  
+- Chargement du dataset,  
+- Prétraitement et nettoyage,  
+- Analyse exploratoire (EDA),  
+- Feature engineering,  
+- Entraînement de plusieurs modèles,  
+- Validation croisée,  
+- Optimisation d’hyperparamètres,  
+- Évaluation finale et visualisations.
+
+Le projet est conçu pour être reproductible intégralement dans **Google Colab** ou dans un environnement Python local.
+
+---
+
+## 📂 Structure du Dépôt
+- `notebook.ipynb` — Implémentation technique complète  
+- `requirements.txt` — Liste des dépendances nécessaires  
+- `README.md` — Document d’accueil du projet  
+- (Optionnel) Figures et exports générés durant l’EDA et le ML
+
+---
+
+## ⚙️ Installation et Exécution
+
+### 1. Cloner le dépôt
+```bash
+git clone <url_du_repo>
+cd <nom_du_repo>
