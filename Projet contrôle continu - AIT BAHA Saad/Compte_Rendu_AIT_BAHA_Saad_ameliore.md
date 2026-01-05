@@ -4,7 +4,6 @@ Soustitre: "Dataset UCI : Estimation of Obesity Levels Based on Eating Habits an
 Institution: "École Nationale de Commerce et de Gestion (ENCG) – Settat"
 Année: "2024–2025"
 Étudiant: "AIT BAHA Saad"
-Groupe 1 – CAC
 ---
 
 # École Nationale de Commerce et de Gestion – Settat  
