@@ -1,10 +1,10 @@
 ---
-title: "Rapport académique – Implémentation technique (Python)"
-subtitle: "Dataset UCI : Estimation of Obesity Levels Based on Eating Habits and Physical Condition (id=544)"
-institution: "École Nationale de Commerce et de Gestion (ENCG) – Settat"
-academic_year: "2024–2025"
-student: "AIT BAHA Saad"
-group: "Groupe 1 – CAC"
+Titre: "Rapport académique – Implémentation technique (Python)"
+Soustitre: "Dataset UCI : Estimation of Obesity Levels Based on Eating Habits and Physical Condition (id=544)"
+Institution: "École Nationale de Commerce et de Gestion (ENCG) – Settat"
+Année: "2024–2025"
+Étudiant: "AIT BAHA Saad"
+"Groupe 1 – CAC"
 ---
 
 # École Nationale de Commerce et de Gestion – Settat  
